@@ -1,11 +1,31 @@
-int SER_Pin = 7;   //pin 14 on the 75HC595
-int RCLK_Pin = 8;  //pin 12 on the 75HC595
-int SRCLK_Pin = 9; //pin 11 on the 75HC595
-int LED1 = 12; //pin 12
-int LED2 = 13; //pin 13
+#define _TINY_ 1
+//#define _ARDUINO_ 1
 
-const int buttonPin = 2; 
-const int vibreur = 6; 
+#if defined(_TINY_)
+  int SER_Pin = 5;   //pin 14 on the 75HC595
+  int RCLK_Pin = 4;  //pin 12 on the 75HC595
+  int SRCLK_Pin = 3; //pin 11 on the 75HC595
+  int LED1 = 10; //pin 12
+  int LED2 = 1; //pin 13
+  const int buttonPin = 2; 
+  const int vibreur = 7; 
+  const int delay_press = 2000;
+  const int delay_vibrate_short = 1000;
+  const int delay_vibrate_end = 4000;
+
+#elif defined(_ARDUINO_)
+  int SER_Pin = 7;   //pin 14 on the 75HC595
+  int RCLK_Pin = 8;  //pin 12 on the 75HC595
+  int SRCLK_Pin = 9; //pin 11 on the 75HC595
+  int LED1 = 12; //pin 12
+  int LED2 = 13; //pin 13
+  const int buttonPin = 2; 
+  const int vibreur = 6; 
+  const int delay_press = 200;
+  const int delay_vibrate_short = 100;
+  const int delay_vibrate_end = 1000;
+#endif
+
 int buttonState = 0;
 int state = 0;
 //How many of the shift registers - change this
@@ -18,7 +38,9 @@ int state = 0;
 boolean registers[numOfRegisterPins];
  
 void setup(){
+#if defined(_ARDUINO_)
   Serial.begin(9600);
+#endif
   pinMode(SER_Pin, OUTPUT);
   pinMode(RCLK_Pin, OUTPUT);
   pinMode(SRCLK_Pin, OUTPUT);
@@ -58,20 +80,11 @@ void clearRegisters(){
  
 //Set and display registers
 //Only call AFTER all values are set how you would like (slow otherwise)
-void writeRegisters(){
- 
-  digitalWrite(RCLK_Pin, LOW);
- 
+void writeRegisters(int mode){
+   digitalWrite(RCLK_Pin, LOW);
     digitalWrite(SRCLK_Pin, LOW);
-  for(int i = numOfRegisterPins - 1; i >=  0; i--){
- 
-    int val = registers[i];
- Serial.print(val);
-    digitalWrite(SER_Pin, val);
+    digitalWrite(SER_Pin, mode);
     digitalWrite(SRCLK_Pin, HIGH);
- 
-  }
-  Serial.println();
   digitalWrite(RCLK_Pin, HIGH);
  
 }
@@ -107,46 +120,53 @@ void loop(){
   // check if the pushbutton is pressed.
   // if it is, the buttonState is HIGH:
   if (buttonState == HIGH) {
+
+#if defined(_ARDUINO_)
     Serial.print("Boutton !!!!");
+#endif
     next();
-    //vibrate();
-  } else {
-    // turn LED off:
   }
  
- // writeRegisters();  //MUST BE CALLED TO DISPLAY CHANGES
-  //Only call once after the values are set how you need.
 }
 
 void next() {
-  if(state==4) {
-    //state++;
-  }
+    delay(delay_vibrate_short);
   switch(state) {
     case 0: 
-    setActivePin(-1);
-    digitalWrite(LED1, HIGH); state++; break;
-    case 1: digitalWrite(LED1, LOW); digitalWrite(LED2, HIGH); state++; break;
-    case 2: digitalWrite(LED1, LOW); digitalWrite(LED2, LOW);
-    setActivePin(state-2);
-    state++; 
+      // setActivePin(-1);
+      writeRegisters(0);
+      digitalWrite(LED1, HIGH); 
+      state++; 
+      break;
+    case 1: 
+      digitalWrite(LED1, LOW); 
+      digitalWrite(LED2, HIGH); 
+      state++; 
+      break;
+    case 2: 
+      digitalWrite(LED1, LOW); 
+      digitalWrite(LED2, LOW);
+      writeRegisters(1);
+      //setActivePin(state-2);
+      state++; 
     break;
     default:
-    Serial.println("default");
-    Serial.println(state-2);
-    setActivePin(state-2);
-    state++;
-  if(state==11) {
-    vibrate();
-    state=0;}       
-  }
+    
+      writeRegisters(0);
+      //setActivePin(state-2);
+      state++;
+      if(state==11) {
+        vibrate();
+        state=0;}       
+    }
   
-  digitalWrite(RCLK_Pin, LOW);
-    delay(200);
+    digitalWrite(RCLK_Pin, LOW);
+
+      delay(delay_press);
 }
 void vibrate() {
     digitalWrite(vibreur, HIGH);
-    delay(1000);
+    delay(delay_vibrate_end);
     digitalWrite(vibreur, LOW);
 }
 
