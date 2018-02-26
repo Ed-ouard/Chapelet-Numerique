@@ -126,14 +126,12 @@ void loop(){
 #endif
     next();
   }
- 
 }
 
 void next() {
-    delay(delay_vibrate_short);
+    vibrate(delay_vibrate_short);
   switch(state) {
     case 0: 
-      // setActivePin(-1);
       writeRegisters(0);
       digitalWrite(LED1, HIGH); 
       state++; 
@@ -147,16 +145,14 @@ void next() {
       digitalWrite(LED1, LOW); 
       digitalWrite(LED2, LOW);
       writeRegisters(1);
-      //setActivePin(state-2);
       state++; 
     break;
     default:
     
       writeRegisters(0);
-      //setActivePin(state-2);
       state++;
-      if(state==11) {
-        vibrate();
+      if(state==10) {
+        vibrate(delay_vibrate_end);
         state=0;}       
     }
   
@@ -164,9 +160,9 @@ void next() {
 
       delay(delay_press);
 }
-void vibrate() {
+void vibrate(int t) {
     digitalWrite(vibreur, HIGH);
-    delay(delay_vibrate_end);
+    delay(t);
     digitalWrite(vibreur, LOW);
 }
 
