@@ -5,8 +5,9 @@
   int SER_Pin = 5;   //pin 14 on the 75HC595
   int RCLK_Pin = 4;  //pin 12 on the 75HC595
   int SRCLK_Pin = 3; //pin 11 on the 75HC595
-  int LED1 = 10; //pin 12
-  int LED2 = 1; //pin 13
+  int DISPLAY_LEDS = 9; //pin 9 on the 75HC595
+  int LED2 = 10; //pin 1
+  int LED1 = 1; //pin 10
   const int buttonPin = 2; 
   const int vibreur = 7; 
   const int delay_press = 2000;
@@ -46,6 +47,7 @@ void setup(){
   pinMode(SRCLK_Pin, OUTPUT);
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
+  pinMode(DISPLAY_LEDS, OUTPUT);
   pinMode(vibreur, OUTPUT);
   pinMode(buttonPin, INPUT);
  
@@ -65,6 +67,7 @@ void setup(){
  setRegisterPin(7, LOW);
   digitalWrite(RCLK_Pin, HIGH);
   digitalWrite(RCLK_Pin, LOW);
+  digitalWrite(DISPLAY_LEDS, HIGH);
 }               
  
 //set all register pins to LOW
@@ -131,29 +134,26 @@ void loop(){
 void next() {
     vibrate(delay_vibrate_short);
   switch(state) {
-    case 0: 
+    case 8: 
       writeRegisters(0);
       digitalWrite(LED1, HIGH); 
       state++; 
       break;
-    case 1: 
+    case 9: 
       digitalWrite(LED1, LOW); 
       digitalWrite(LED2, HIGH); 
-      state++; 
+        vibrate(delay_vibrate_end);
+        state=0;
       break;
-    case 2: 
+    case 0: 
       digitalWrite(LED1, LOW); 
       digitalWrite(LED2, LOW);
       writeRegisters(1);
       state++; 
     break;
     default:
-    
       writeRegisters(0);
-      state++;
-      if(state==10) {
-        vibrate(delay_vibrate_end);
-        state=0;}       
+      state++;   
     }
   
     digitalWrite(RCLK_Pin, LOW);
