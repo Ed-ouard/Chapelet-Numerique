@@ -1,0 +1,213 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L R R?
+U 1 1 5A9CA671
+P 2950 5200
+F 0 "R?" V 3030 5200 50  0000 C CNN
+F 1 "R" V 2950 5200 50  0000 C CNN
+F 2 "" V 2880 5200 50  0001 C CNN
+F 3 "" H 2950 5200 50  0001 C CNN
+	1    2950 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CA774
+P 3350 5200
+F 0 "R?" V 3430 5200 50  0000 C CNN
+F 1 "R" V 3350 5200 50  0000 C CNN
+F 2 "" V 3280 5200 50  0001 C CNN
+F 3 "" H 3350 5200 50  0001 C CNN
+	1    3350 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CA7C5
+P 3750 5200
+F 0 "R?" V 3830 5200 50  0000 C CNN
+F 1 "R" V 3750 5200 50  0000 C CNN
+F 2 "" V 3680 5200 50  0001 C CNN
+F 3 "" H 3750 5200 50  0001 C CNN
+	1    3750 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CA814
+P 4100 5150
+F 0 "R?" V 4180 5150 50  0000 C CNN
+F 1 "R" V 4100 5150 50  0000 C CNN
+F 2 "" V 4030 5150 50  0001 C CNN
+F 3 "" H 4100 5150 50  0001 C CNN
+	1    4100 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CA8C5
+P 4350 5150
+F 0 "R?" V 4430 5150 50  0000 C CNN
+F 1 "R" V 4350 5150 50  0000 C CNN
+F 2 "" V 4280 5150 50  0001 C CNN
+F 3 "" H 4350 5150 50  0001 C CNN
+	1    4350 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CA8F2
+P 4850 5250
+F 0 "R?" V 4930 5250 50  0000 C CNN
+F 1 "R" V 4850 5250 50  0000 C CNN
+F 2 "" V 4780 5250 50  0001 C CNN
+F 3 "" H 4850 5250 50  0001 C CNN
+	1    4850 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CAA8B
+P 4600 5100
+F 0 "R?" V 4680 5100 50  0000 C CNN
+F 1 "R" V 4600 5100 50  0000 C CNN
+F 2 "" V 4530 5100 50  0001 C CNN
+F 3 "" H 4600 5100 50  0001 C CNN
+	1    4600 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CAB06
+P 5150 5200
+F 0 "R?" V 5230 5200 50  0000 C CNN
+F 1 "R" V 5150 5200 50  0000 C CNN
+F 2 "" V 5080 5200 50  0001 C CNN
+F 3 "" H 5150 5200 50  0001 C CNN
+	1    5150 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CAB30
+P 5400 5100
+F 0 "R?" V 5480 5100 50  0000 C CNN
+F 1 "R" V 5400 5100 50  0000 C CNN
+F 2 "" V 5330 5100 50  0001 C CNN
+F 3 "" H 5400 5100 50  0001 C CNN
+	1    5400 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CAB66
+P 5700 5200
+F 0 "R?" V 5780 5200 50  0000 C CNN
+F 1 "R" V 5700 5200 50  0000 C CNN
+F 2 "" V 5630 5200 50  0001 C CNN
+F 3 "" H 5700 5200 50  0001 C CNN
+	1    5700 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5A9CAB98
+P 5950 5150
+F 0 "R?" V 6030 5150 50  0000 C CNN
+F 1 "R" V 5950 5150 50  0000 C CNN
+F 2 "" V 5880 5150 50  0001 C CNN
+F 3 "" H 5950 5150 50  0001 C CNN
+	1    5950 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L ATTINY84A-PU U?
+U 1 1 5A9CAF96
+P 6900 2100
+F 0 "U?" H 6050 2850 50  0000 C CNN
+F 1 "ATTINY84A-PU" H 7600 1350 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm" H 6900 1900 50  0001 C CIN
+F 3 "" H 6900 2100 50  0001 C CNN
+	1    6900 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 5A9CAFBB
+P 1650 3950
+F 0 "#PWR?" H 1650 3800 50  0001 C CNN
+F 1 "VCC" H 1650 4100 50  0000 C CNN
+F 2 "" H 1650 3950 50  0001 C CNN
+F 3 "" H 1650 3950 50  0001 C CNN
+	1    1650 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A9CAFE7
+P 2100 3850
+F 0 "#PWR?" H 2100 3600 50  0001 C CNN
+F 1 "GND" H 2100 3700 50  0000 C CNN
+F 2 "" H 2100 3850 50  0001 C CNN
+F 3 "" H 2100 3850 50  0001 C CNN
+	1    2100 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC595 U?
+U 1 1 5A9CB67B
+P 3400 3400
+F 0 "U?" H 3550 4000 50  0000 C CNN
+F 1 "74HC595" H 3400 2800 50  0000 C CNN
+F 2 "" H 3400 3400 50  0001 C CNN
+F 3 "" H 3400 3400 50  0001 C CNN
+	1    3400 3400
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
