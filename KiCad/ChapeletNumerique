@@ -1,0 +1,18 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+    <h1>E:\Dropbox\portableApps\Arduino\arduino_and_processing\Chapelet-Numerique\KiCad\ChapeletNumerique.sch</h1>
+    <p>14/03/2018 02:21:26</p>
+    <p>Eeschema 4.0.7</p>
+    <p><b>Component Count:</b>25</p>
+    <table>
+    <tr><th style='width:640px'>Ref</th><th>Qnty</th><th>Value</th><th>Part</th><th>Datasheet</th><th>Description</th><th>Vendor</th></tr><tr><td>Attiny84</td><td>1</td><td>ATTINY84A-PU</td><td>atmel:ATTINY84A-PU</td><td></td><td>PDIP14, 2k Flash, 128B SRAM, 128B EEPROM, dW</td><td></td></tr><tr><td>D1, D2, D3, D4, D5, D6, D7, D8, D9, D10</td><td>10</td><td>LED</td><td>device:LED</td><td></td><td>LED generic</td><td></td></tr><tr><td>R1, R2, R3, R4, R5, R6, R7, R8, R9, R10</td><td>10</td><td>150</td><td>device:R</td><td></td><td>Resistor</td><td></td></tr><tr><td>R11</td><td>1</td><td>1k</td><td>device:R</td><td></td><td>Resistor</td><td></td></tr><tr><td>ShiftRegister1</td><td>1</td><td>74HC595</td><td>74xx:74HC595</td><td></td><td>8 bits serial in // out Shift Register 3 State Out</td><td></td></tr><tr><td>Switch1</td><td>1</td><td>SW_DIP_x01</td><td>switches:SW_DIP_x01</td><td></td><td>1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol</td><td></td></tr><tr><td>Vibreur1</td><td>1</td><td>Motor_DC_ALT</td><td>motors:Motor_DC_ALT</td><td></td><td>DC Motor, alternative symbol</td><td></td></tr><!--TABLEROW-->
+    </table>
+    </body>
+</html>
+    
